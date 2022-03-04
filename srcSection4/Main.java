@@ -1,5 +1,7 @@
 package com.company;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -89,7 +91,7 @@ public class Main {
 //        }
 
         int position = 4;
-        
+
         if(score >= 1000) {
             position = 1;
         } else if (score >= 500) {
@@ -100,4 +102,26 @@ public class Main {
 
         return position;
     }
+
+
+
+    public static long toMilesPerHour(double kilometersPerHour) {
+        if(kilometersPerHour < 0) {
+            return -1;
+        } else {
+            return Math.round((kilometersPerHour * 0.621371));
+        }
+
+    }
+
+    public static void printConversion(double kilometersPerHour) {
+        if(kilometersPerHour < 0) {
+            System.out.println("Invalid Value");
+        } else {
+            long conversion = toMilesPerHour(kilometersPerHour);
+            System.out.println(kilometersPerHour + " km/h = " + conversion + " mi/h");
+        }
+    }
+
+
 }
