@@ -1,6 +1,21 @@
 public class Challenges {
     public static void main(String[] args) {
 
+        int count = 0;
+        int sum = 0;
+        for(int i=1; i<1000; i++) {
+            if(i % 5 == 0 && i % 3 == 0) {
+                count++;
+                sum += i;
+                System.out.println("Found number " + i);
+            }
+            if(count == 5) {
+                System.out.println(sum);
+                break;
+            }
+        }
+        System.out.println(isOdd(24));
+
     }
 
     public static void printNumberInWord(int number) {
@@ -75,4 +90,31 @@ public class Challenges {
             return 30;
         }
     }
+
+    public static boolean isOdd(int number) {
+        if(number < 0) {
+            return false;
+        }
+        if(number % 2 == 0) {
+            return false;
+        }
+        return  true;
+    }
+
+    public static int sumOdd(int start, int end){
+        if(end < start || end < 0 || start < 0) {
+            return -1;
+        }
+
+        int sum = 0;
+
+        for(int i = start; i <= end; i++ ) {
+            if(isOdd(i)){
+                sum += i;
+            }
+        }
+        return sum;
+    }
+
+
 }
