@@ -1,0 +1,34 @@
+@startuml
+class Cylinder {
+~ double radius
+~ double height
+~ double surface_area()
+~ double volume()
++ String toString()
+}
+abstract class Shape {
+~ {abstract}double surface_area()
+~ {abstract}double volume()
+}
+class Sphere {
+~ double radius
+~ double surface_area()
+~ double volume()
++ String toString()
+}
+class ShapeArray {
++ {static} void main(String[])
+}
+class Cone {
+~ double radius
+~ double height
+~ double surface_area()
+~ double volume()
++ String toString()
+}
+
+
+Shape <|-- Cylinder
+Shape <|-- Sphere
+Shape <|-- Cone
+@enduml
